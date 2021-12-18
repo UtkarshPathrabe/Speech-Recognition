@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Speech Detection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta
+    name="description"
+    content="Speech Recognition application created using JavaScript"
+  />
 </head>
 <body>
-  <h2 style="text-align: center;">Speak something in your microphone</h2>
+  <h2 class="header" style="text-align: center;">Speak something in your microphone</h2>
   <div class="words" contenteditable>
   </div>
 
@@ -26,7 +32,6 @@
   });
   recognition.addEventListener('end', recognition.start);
   recognition.start();
-
 </script>
 
 
@@ -36,10 +41,16 @@
     }
 
     body {
-      background: #ffc600;
+      background-color: #1a1a1d;
       font-family: 'helvetica neue';
       font-weight: 200;
       font-size: 20px;
+    }
+
+    .header {
+      text-align: center;
+      color: #cbcbcb;
+      font-family: Arial;
     }
 
     .words {
@@ -53,6 +64,8 @@
       background-size: 100% 3rem;
       position: relative;
       line-height: 3rem;
+      overflow: auto;
+      max-height: calc(100vh - 200px);
     }
     
     p {
