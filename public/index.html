@@ -3,88 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Speech Detection</title>
+  <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta
-    name="description"
-    content="Speech Recognition application created using JavaScript"
-  />
+  <meta name="description" content="Speech Recognition application created using JavaScript" />
 </head>
 <body>
-  <h2 class="header" style="text-align: center;">Speak something in your microphone</h2>
-  <div class="words" contenteditable>
-  </div>
-
-<script>
-  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognition();
-  recognition.interimResults = true;
-  let p = document.createElement('p');
-  const words = document.querySelector('.words');
-  words.appendChild(p);
-  recognition.addEventListener('result', e => {
-    const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('');
-    p.textContent = transcript;
-    if (e.results[0].isFinal) {
-      p = document.createElement('p');
-      words.appendChild(p);
-    }
-  });
-  recognition.addEventListener('end', recognition.start);
-  recognition.start();
-</script>
-
-
-  <style>
-    html {
-      font-size: 10px;
-    }
-
-    body {
-      background-color: #1a1a1d;
-      font-family: 'helvetica neue';
-      font-weight: 200;
-      font-size: 20px;
-    }
-
-    .header {
-      text-align: center;
-      color: #cbcbcb;
-      font-family: Arial;
-    }
-
-    .words {
-      max-width: 500px;
-      margin: 50px auto;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-      padding: 1rem 2rem 1rem 5rem;
-      background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
-      background-size: 100% 3rem;
-      position: relative;
-      line-height: 3rem;
-      overflow: auto;
-      max-height: calc(100vh - 200px);
-      min-height: 50vh;
-      font-family: monospace;
-    }
-    
-    p {
-      margin: 0 0 3rem;
-    }
-
-    .words:before {
-      content: '';
-      position: absolute;
-      width: 4px;
-      top: 0;
-      left: 30px;
-      bottom: 0;
-      border: 1px solid;
-      border-color: transparent #efe4e4;
-    }
-  </style>
-
+  <h2 class="header" style="text-align: center;">
+    Speak something in your microphone
+  </h2>
+  <div class="words" contenteditable></div>
+  <script src='scripts.js'></script>
 </body>
 </html>
