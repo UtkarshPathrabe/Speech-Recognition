@@ -1,7 +1,7 @@
 Speech Recognition
 ==================  
 
-[Live Website](https://speech-recognition-js.herokuapp.com/)  
+[Live Website](https://utkarshpathrabe.github.io/Speech-Recognition/)  
 
 Speech Recognition website created using JavaScript.  
 
