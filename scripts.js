@@ -1,8 +1,8 @@
-window.SpeechRecognition =  root.SpeechRecognition ||
-                            root.webkitSpeechRecognition ||
-                            root.mozSpeechRecognition ||
-                            root.msSpeechRecognition ||
-                            root.oSpeechRecognition;
+window.SpeechRecognition =  window.SpeechRecognition ||
+                            window.webkitSpeechRecognition ||
+                            window.mozSpeechRecognition ||
+                            window.msSpeechRecognition ||
+                            window.oSpeechRecognition;
 const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 let p = document.createElement('p');
